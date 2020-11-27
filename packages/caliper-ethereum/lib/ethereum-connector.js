@@ -118,7 +118,8 @@ class EthereumConnector extends ConnectorBase {
                 let contractInstance;
                 try {
                     if (privacy) {
-                        contractInstance = await self.deployPrivateContract(contractData, privacy);
+                        // contractInstance = await self.deployPrivateContract(contractData, privacy);
+                        contractInstance = await self.deployPrivateContractQuorum(contractData, privacy);
                         logger.info('Deployed private contract ' + contractData.name + ' at ' + contractInstance.options.address);
                     } else {
                         contractInstance = await self.deployContract(contractData);
@@ -215,7 +216,8 @@ class EthereumConnector extends ConnectorBase {
      */
     async _sendSingleRequest(request) {
         if (request.privacy) {
-            return this._sendSinglePrivateRequest(request);
+            // return this._sendSinglePrivateRequest(request);
+            return this._sendSinglePrivateRequestQuorum(request);
         }
 
         const context = this.context;
@@ -348,6 +350,75 @@ class EthereumConnector extends ConnectorBase {
         return status;
     }
 
+    async _sendSinglePrivateRequestQuorum(request) {
+        const context = this.context;
+        let status = new TxStatus();
+        let contractInfo = context.contracts[request.contract];
+        const privacy = request.privacy;
+        let params = {
+            from: context.fromAddress,
+            privateFor: privacy.privateFor
+        };
+
+        let receipt = null;
+        let methodType = 'send';
+        if (request.readOnly) {
+            methodType = 'call';
+        } else if (context.nonces && (typeof context.nonces[context.fromAddress] !== 'undefined')) {
+            let nonce = context.nonces[context.fromAddress];
+            context.nonces[context.fromAddress] = nonce + 1;
+            params.nonce = nonce;
+
+            // leaving these values unset causes web3 to fetch gasPrice and
+            // chainId on the fly. This can cause transactions to be
+            // reordered, which in turn causes nonce failures
+            params.gasPrice = context.gasPrice;
+            params.chainId = context.chainId;
+        }
+
+        const onFailure = (err) => {
+            status.SetStatusFail();
+            logger.error('Failed tx on ' + request.contract + ' calling method ' + request.verb + ' nonce ' + params.nonce);
+            logger.error(err);
+        };
+
+        const onSuccess = (rec) => {
+            status.SetID(rec.transactionHash);
+            status.SetResult(rec);
+            status.SetVerification(true);
+            status.SetStatusSuccess();
+        };
+
+        if (request.args) {
+            if (contractInfo.gas && contractInfo.gas[request.verb]) {
+                params.gas = contractInfo.gas[request.verb];
+            } else if (contractInfo.estimateGas) {
+                params.gas = 1000 + await contractInfo.contract.methods[request.verb](...request.args).estimateGas();
+            }
+
+            try {
+                receipt = await contractInfo.contract.methods[request.verb](...request.args)[methodType](params);
+                onSuccess(receipt);
+            } catch (err) {
+                onFailure(err);
+            }
+        } else {
+            if (contractInfo.gas && contractInfo.gas[request.verb]) {
+                params.gas = contractInfo.gas[request.verb];
+            } else if (contractInfo.estimateGas) {
+                params.gas = 1000 + await contractInfo.contract.methods[request.verb].estimateGas(params);
+            }
+
+            try {
+                receipt = await contractInfo.contract.methods[request.verb]()[methodType](params);
+                onSuccess(receipt);
+            } catch (err) {
+                onFailure(err);
+            }
+        }
+
+        return status;
+    }
 
     /**
      * Deploys a new contract using the given web3 instance
@@ -404,6 +475,26 @@ class EthereumConnector extends ConnectorBase {
             }
         } catch (err) {
             logger.error('Error deploying private contract: ', JSON.stringify(err));
+            throw(err);
+        }
+    }
+
+    async deployPrivateContractQuorum(contractData, privacy) {
+        const web3 = this.web3;
+        const contractDeployerAddress = this.ethereumConfig.contractDeployerAddress;
+        const contract = new web3.eth.Contract(contractData.abi);
+
+        const contractDeploy = contract.deploy({
+            data: contractData.bytecode
+        });
+
+        try {
+            return contractDeploy.send({
+                from: contractDeployerAddress,
+                gas: contractData.gas,
+                privateFor: privacy.privateFor
+            });
+        } catch (err) {
             throw(err);
         }
     }
