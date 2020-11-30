@@ -51,7 +51,7 @@ class Docker {
     static async handler(image, registry, publish, user, retries, tag) {
         const cliPackageJsonPath = path.join(packagesRoot, 'caliper-cli', 'package.json');
         const cliPackageVersion = require(cliPackageJsonPath).version;
-        const cliPackageName = `@hyperledger/caliper-cli@${cliPackageVersion}`;
+        const cliPackageName = `@bsostech/caliper-cli@${cliPackageVersion}`;
 
         let packagePublished = false;
         for (let i = 1; i <= MAX_BACKOFF; i++) {

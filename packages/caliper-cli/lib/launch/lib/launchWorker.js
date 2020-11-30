@@ -14,7 +14,7 @@
 
 'use strict';
 
-const { CaliperUtils, ConfigUtil, Constants, WorkerMessageHandler } = require('@hyperledger/caliper-core');
+const { CaliperUtils, ConfigUtil, Constants, WorkerMessageHandler } = require('@bsostech/caliper-core');
 const BindCommon = require('./../../lib/bindCommon');
 const logger = CaliperUtils.getLogger('cli-launch-worker');
 

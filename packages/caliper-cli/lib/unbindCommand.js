@@ -14,7 +14,7 @@
 
 'use strict';
 
-const { CaliperUtils } = require('@hyperledger/caliper-core');
+const { CaliperUtils } = require('@bsostech/caliper-core');
 
 const BindCommon = require('./lib/bindCommon');
 

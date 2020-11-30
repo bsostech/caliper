@@ -54,7 +54,7 @@ function injectCustomVersion(packageJsonPath, customVersion) {
 
     // overwrite every dependency to other Caliper packages (to keep unstable builds in sync)
     for (let dep of Object.keys(packageObject.dependencies)) {
-        if (dep.startsWith('@hyperledger/caliper-')) {
+        if (dep.startsWith('@bsostech/caliper-')) {
             packageObject.dependencies[dep] = customVersion;
         }
     }
@@ -111,24 +111,24 @@ class NPM {
             try {
                 let published = false;
                 for (let i = 0; i < retries; i++) {
-                    log(`Publishing @hyperledger/${pkg}@${packageVersion} with tag "${tag}". Attempt ${i+1}/${retries}:`);
+                    log(`Publishing @bsostech/${pkg}@${packageVersion} with tag "${tag}". Attempt ${i+1}/${retries}:`);
                     try {
                         await utils.invokeCommand(scriptPath, [], envs, packageDir);
-                        log(`Published package @hyperledger/${pkg}@${packageVersion}\n`);
+                        log(`Published package @bsostech/${pkg}@${packageVersion}\n`);
                         published = true;
                         break;
                     } catch (error) {
-                        log(`Failed to publish package @hyperledger/${pkg}@${packageVersion} (attempt ${i+1}/${retries})`);
+                        log(`Failed to publish package @bsostech/${pkg}@${packageVersion} (attempt ${i+1}/${retries})`);
                         log(error);
                     }
                 }
 
                 if (!published) {
-                    log(`Aborting, could not publish package @hyperledger/${pkg}@${packageVersion}`);
+                    log(`Aborting, could not publish package @bsostech/${pkg}@${packageVersion}`);
                     process.exit(1);
                 }
             } catch (err) {
-                log(`Aborting, could not publish package @hyperledger/${pkg}@${packageVersion}`);
+                log(`Aborting, could not publish package @bsostech/${pkg}@${packageVersion}`);
                 log(err);
                 process.exit(1);
             }

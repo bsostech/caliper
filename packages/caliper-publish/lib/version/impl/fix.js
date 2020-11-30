@@ -35,7 +35,7 @@ function injectCustomVersion(packageJsonPath, customVersion) {
 
         // overwrite every dependency to other Caliper packages if any (to keep unstable builds in sync)
         for (const dep of Object.keys(packageObject.dependencies)) {
-            if (dep.startsWith('@hyperledger/caliper-')) {
+            if (dep.startsWith('@bsostech/caliper-')) {
                 console.log(`\tSetting dependency version for "${dep}" to "${customVersion}"`);
                 packageObject.dependencies[dep] = customVersion;
             }

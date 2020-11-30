@@ -15,7 +15,7 @@
 
 'use strict';
 
-const { WorkloadModuleBase } = require('@hyperledger/caliper-core');
+const { WorkloadModuleBase } = require('@bsostech/caliper-core');
 
 const Dictionary = 'abcdefghijklmnopqrstuvwxyz';
 

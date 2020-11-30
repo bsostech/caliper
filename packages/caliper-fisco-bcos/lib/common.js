@@ -17,7 +17,7 @@
 const isArray = require('isarray');
 const path = require('path');
 const fs = require('fs');
-const CaliperUtils = require('@hyperledger/caliper-core').CaliperUtils;
+const CaliperUtils = require('@bsostech/caliper-core').CaliperUtils;
 const commLogger = CaliperUtils.getLogger('common.js');
 
 const TxErrorEnum = {

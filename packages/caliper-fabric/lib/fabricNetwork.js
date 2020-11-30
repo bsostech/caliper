@@ -15,7 +15,7 @@
 'use strict';
 
 const fs = require('fs');
-const CaliperUtils = require('@hyperledger/caliper-core').CaliperUtils;
+const CaliperUtils = require('@bsostech/caliper-core').CaliperUtils;
 
 /**
  * Utility class for accessing information in a Common Connection Profile configuration

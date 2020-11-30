@@ -17,7 +17,7 @@
 const FabricClient = require('fabric-client');
 const FabricConstants = require('fabric-client/lib/Constants');
 const {google, common} = require('fabric-protos');
-const {ConnectorBase, CaliperUtils, TxStatus, Version, ConfigUtil} = require('@hyperledger/caliper-core');
+const {ConnectorBase, CaliperUtils, TxStatus, Version, ConfigUtil} = require('@bsostech/caliper-core');
 const FabricNetwork = require('../../fabricNetwork.js');
 
 const fs = require('fs');

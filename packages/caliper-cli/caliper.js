@@ -16,7 +16,7 @@
 'use strict';
 
 process.env.SUPPRESS_NO_CONFIG_WARNING = true;
-const { CaliperUtils } = require('@hyperledger/caliper-core');
+const { CaliperUtils } = require('@bsostech/caliper-core');
 const Logger = CaliperUtils.getLogger('cli');
 const yargs = require('yargs');
 const version = 'v' + require('./package.json').version;

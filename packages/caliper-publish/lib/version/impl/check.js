@@ -48,7 +48,7 @@ class Check {
             }
 
             for (const dep of Object.keys(packageObject.dependencies)) {
-                if (dep.startsWith('@hyperledger/caliper-') && packageObject.dependencies[dep] !== lernaVersion) {
+                if (dep.startsWith('@bsostech/caliper-') && packageObject.dependencies[dep] !== lernaVersion) {
                     mismatch = true;
                     console.log(`ERROR: package "${pkg}" dependency "${dep}" does not match lerna version "${lernaVersion}"`);
                 }

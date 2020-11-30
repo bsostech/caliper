@@ -14,7 +14,7 @@
 
 'use strict';
 
-const CaliperUtils = require('@hyperledger/caliper-core').CaliperUtils;
+const CaliperUtils = require('@bsostech/caliper-core').CaliperUtils;
 const fs = require('fs');
 const path = require('path');
 const ora = require('ora');

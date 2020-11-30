@@ -1,5 +1,5 @@
 {
-    "name": "@hyperledger/caliper-gui-dashboard",
+    "name": "@bsostech/caliper-gui-dashboard",
     "description": "Hyperledger Caliper GUI dashboard module, for easily assembling configuration files and monitoring benchmark runs",
     "version": "0.4.1",
     "private": true,

@@ -15,7 +15,7 @@
 'use strict';
 
 const { DefaultEventHandlerStrategies, DefaultQueryHandlerStrategies, Gateway, Wallets } = require('fabric-network');
-const { ConnectorBase, CaliperUtils, TxStatus, Version, ConfigUtil } = require('@hyperledger/caliper-core');
+const { ConnectorBase, CaliperUtils, TxStatus, Version, ConfigUtil } = require('@bsostech/caliper-core');
 
 const FabricNetwork = require('../../fabricNetwork.js');
 const RegistrarHelper = require('./registrarHelper');

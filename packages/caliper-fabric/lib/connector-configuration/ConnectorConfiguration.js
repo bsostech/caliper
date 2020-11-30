@@ -14,7 +14,7 @@
 
 'use strict';
 
-const CaliperUtils = require('@hyperledger/caliper-core').CaliperUtils;
+const CaliperUtils = require('@bsostech/caliper-core').CaliperUtils;
 const ConnectionProfileDefinition = require('./ConnectionProfileDefinition');
 const fs = require('fs');
 

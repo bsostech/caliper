@@ -1,10 +1,10 @@
 {
-    "name": "@hyperledger/caliper-fabric",
+    "name": "@bsostech/caliper-fabric",
     "description": "Hyperledger Fabric connector for Caliper, enabling the running of performance benchmarks that interact with Fabric",
-    "version": "0.4.1",
+    "version": "0.4.1-unstable-20201130105745",
     "repository": {
         "type": "git",
-        "url": "https://github.com/hyperledger/caliper",
+        "url": "https://github.com/bsostech/caliper",
         "directory": "packages/caliper-fabric"
     },
     "publishConfig": {
@@ -23,7 +23,7 @@
     },
     "dependencies": {
         "@hapi/joi": "^15.1.1",
-        "@hyperledger/caliper-core": "0.4.1",
+        "@bsostech/caliper-core": "0.4.1-unstable-20201130105745",
         "semver": "7.1.1"
     },
     "devDependencies": {

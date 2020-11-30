@@ -15,7 +15,7 @@
 'use strict';
 
 const { DefaultEventHandlerStrategies, DefaultQueryHandlerStrategies, Gateway } = require('fabric-network');
-const { ConnectorBase, CaliperUtils, TxStatus, Version, ConfigUtil } = require('@hyperledger/caliper-core');
+const { ConnectorBase, CaliperUtils, TxStatus, Version, ConfigUtil } = require('@bsostech/caliper-core');
 const FabricConnectorContext = require('../../FabricConnectorContext');
 
 const logger = CaliperUtils.getLogger('connectors/v2/FabricGateway');

@@ -40,7 +40,7 @@ const shell = require('shelljs');
 // caliper-core dependencies
 const {
     CaliperUtils
-} = require('@hyperledger/caliper-core');
+} = require('@bsostech/caliper-core');
 const CaliperFlow = require('../gui-caliper-flow');
 // development dependencies
 const express = require('express');

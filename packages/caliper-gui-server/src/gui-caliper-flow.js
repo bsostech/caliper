@@ -39,7 +39,7 @@ const {
     DefaultTest,
     LocalObserver,
     PrometheusObserver,
-} = require('@hyperledger/caliper-core');
+} = require('@bsostech/caliper-core');
 
 const path = require('path');
 

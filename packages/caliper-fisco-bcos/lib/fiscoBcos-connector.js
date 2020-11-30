@@ -20,7 +20,7 @@ const {
     ConnectorBase,
     CaliperUtils,
     ConfigUtil
-} = require('@hyperledger/caliper-core');
+} = require('@bsostech/caliper-core');
 const installSmartContractImpl = require('./installSmartContract');
 const invokeSmartContractImpl = require('./invokeSmartContract');
 const generateRawTransactionImpl = require('./generateRawTransactions');

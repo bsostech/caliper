@@ -14,7 +14,7 @@
 
 'use strict';
 
-const { CaliperUtils, ConfigUtil } = require('@hyperledger/caliper-core');
+const { CaliperUtils, ConfigUtil } = require('@bsostech/caliper-core');
 
 const fs = require('fs');
 const path = require('path');

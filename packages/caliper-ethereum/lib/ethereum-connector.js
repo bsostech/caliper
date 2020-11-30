@@ -17,7 +17,7 @@
 const EthereumHDKey = require('ethereumjs-wallet/hdkey');
 const Web3 = require('web3');
 const EEAClient = require('web3-eea');
-const {ConnectorBase, CaliperUtils, ConfigUtil, TxStatus} = require('@hyperledger/caliper-core');
+const {ConnectorBase, CaliperUtils, ConfigUtil, TxStatus} = require('@bsostech/caliper-core');
 
 const logger = CaliperUtils.getLogger('ethereum-connector');
 

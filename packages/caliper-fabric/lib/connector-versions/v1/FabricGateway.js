@@ -15,7 +15,7 @@
 'use strict';
 const semver = require('semver');
 const { DefaultEventHandlerStrategies, DefaultQueryHandlerStrategies, Gateway } = require('fabric-network');
-const { ConnectorBase, CaliperUtils, TxStatus, ConfigUtil } = require('@hyperledger/caliper-core');
+const { ConnectorBase, CaliperUtils, TxStatus, ConfigUtil } = require('@bsostech/caliper-core');
 const FabricConnectorContext = require('../../FabricConnectorContext');
 
 const logger = CaliperUtils.getLogger('connectors/v1/FabricGateway');

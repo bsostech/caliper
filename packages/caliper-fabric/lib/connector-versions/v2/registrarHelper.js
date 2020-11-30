@@ -14,7 +14,7 @@
 
 'use strict';
 const { Wallets } = require('fabric-network');
-const { CaliperUtils } = require('@hyperledger/caliper-core');
+const { CaliperUtils } = require('@bsostech/caliper-core');
 const logger = CaliperUtils.getLogger('identityHelper');
 const FabricCAServices = require('fabric-ca-client');
 

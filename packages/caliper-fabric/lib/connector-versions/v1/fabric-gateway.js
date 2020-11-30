@@ -17,7 +17,7 @@
 const FabricClient = require('fabric-client');
 const { DefaultEventHandlerStrategies, DefaultQueryHandlerStrategies, FileSystemWallet, Gateway, InMemoryWallet, X509WalletMixin } = require('fabric-network');
 const { google, common } = require('fabric-protos');
-const { ConnectorBase, CaliperUtils, TxStatus, ConfigUtil } = require('@hyperledger/caliper-core');
+const { ConnectorBase, CaliperUtils, TxStatus, ConfigUtil } = require('@bsostech/caliper-core');
 const FabricNetwork = require('../../fabricNetwork.js');
 
 const fs = require('fs');

@@ -75,7 +75,7 @@ describe('', () => {
         '\n' +
         '\'use strict\';\n' +
         '\n' +
-        'const { WorkloadModuleBase } = require(\'@hyperledger/caliper-core\');\n' +
+        'const { WorkloadModuleBase } = require(\'@bsostech/caliper-core\');\n' +
         '\n' +
         '/**\n' +
         ' * Workload module for the benchmark round.\n' +

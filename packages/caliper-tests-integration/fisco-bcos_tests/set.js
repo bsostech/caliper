@@ -14,7 +14,7 @@
 
 'use strict';
 
-const { WorkloadModuleBase } = require('@hyperledger/caliper-core');
+const { WorkloadModuleBase } = require('@bsostech/caliper-core');
 
 /**
  * Workload module for simple set operations.

@@ -1,12 +1,12 @@
 {
-    "name": "@hyperledger/generator-caliper",
+    "name": "@bsostech/generator-caliper",
     "description": "Yeoman generator for Hyperledger Caliper",
-    "version": "0.4.1",
+    "version": "0.4.1-unstable-20201130105745",
     "author": "Lynn Muswere",
     "homepage": "https://hyperledger.github.io/caliper/",
     "repository": {
         "type": "git",
-        "url": "https://github.com/hyperledger/caliper"
+        "url": "https://github.com/bsostech/caliper"
     },
     "main": "generators/callback/index.js",
     "keywords": [

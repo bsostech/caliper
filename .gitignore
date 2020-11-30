@@ -49,3 +49,5 @@ data/
 
 # Ignore temp test files
 temp/
+
+.npmrc

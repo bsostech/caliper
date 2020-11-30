@@ -15,7 +15,7 @@
 'use strict';
 
 const LaunchManager = require('./lib/launchManager');
-const { CaliperUtils } = require('@hyperledger/caliper-core');
+const { CaliperUtils } = require('@bsostech/caliper-core');
 
 // enforces singletons
 const checkFn = (argv) => {

@@ -24,7 +24,7 @@ const path = require('path');
 
 const { Wallets } = require('./connector-versions/v2/V2GatewayStubs');
 const { ConnectorFactory } = require('../lib/FabricConnectorFactory');
-const { ConfigUtil } = require('@hyperledger/caliper-core');
+const { ConfigUtil } = require('@bsostech/caliper-core');
 
 const legacyConfig = './sample-configs/LegacyNetworkConfig.yaml';
 const v2Config = './sample-configs/NoIdentitiesNetworkConfig.yaml';

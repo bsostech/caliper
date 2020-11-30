@@ -14,7 +14,7 @@
 
 'use strict';
 
-const { CaliperUtils, ConfigUtil } = require('@hyperledger/caliper-core');
+const { CaliperUtils, ConfigUtil } = require('@bsostech/caliper-core');
 const ConnectorConfigurationFactory = require('./connector-configuration/ConnectorConfigurationFactory');
 const ConfigValidator = require('./configValidator.js');
 const Logger = CaliperUtils.getLogger('fabric-connector');

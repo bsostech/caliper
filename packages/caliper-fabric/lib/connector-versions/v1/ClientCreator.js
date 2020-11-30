@@ -15,7 +15,7 @@
 'use strict';
 
 const FabricClient = require('fabric-client');
-const {CaliperUtils} = require('@hyperledger/caliper-core');
+const {CaliperUtils} = require('@bsostech/caliper-core');
 
 const logger = CaliperUtils.getLogger('connectors/v1/ClientCreator');
 

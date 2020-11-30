@@ -56,7 +56,7 @@ describe('A Node-SDK V2 Fabric Gateway', () => {
         FabricGateway = require('../../../lib/connector-versions/v2/FabricGateway');
         WalletFacadeFactory = require('../../../lib/connector-versions/v2/WalletFacadeFactory');
         FabricConnectorContext = require('../../../lib/FabricConnectorContext');
-        TxStatus = require('@hyperledger/caliper-core').TxStatus;
+        TxStatus = require('@bsostech/caliper-core').TxStatus;
     });
 
     after(() => {

@@ -15,7 +15,7 @@
 'use strict';
 
 const path = require('path');
-const { CaliperEngine, CaliperUtils, ConfigUtil, Constants } = require('@hyperledger/caliper-core');
+const { CaliperEngine, CaliperUtils, ConfigUtil, Constants } = require('@bsostech/caliper-core');
 const BindCommon = require('../../lib/bindCommon');
 const logger = CaliperUtils.getLogger('cli-launch-manager');
 
